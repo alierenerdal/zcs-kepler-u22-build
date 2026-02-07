@@ -1,0 +1,12 @@
+name: test
+
+on:
+  push:
+    branches: [ main, erdalroot ]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ZCS build repo working 🚀"
+
