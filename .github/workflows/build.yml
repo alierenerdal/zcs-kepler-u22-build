@@ -1,0 +1,20 @@
+name: Build Verification
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify TGZ exists
+        run: |
+          test -f zcs-9.0.0_GA_1013.UBUNTU22_64.20260207114844.tgz
+
+      - name: Check archive integrity
+        run: |
+          tar -tzf zcs-9.0.0_GA_1013.UBUNTU22_64.20260207114844.tgz > /dev/null

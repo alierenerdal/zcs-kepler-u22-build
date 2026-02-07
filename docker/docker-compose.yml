@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  zimbra:
+    image: ubuntu:22.04
+    container_name: zcs
+    tty: true
+    volumes:
+      - ./data:/opt/zimbra
