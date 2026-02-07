@@ -11,6 +11,28 @@ Official Zimbra Collaboration Suite 9 (KEPLER) Ubuntu 22 custom build bundle.
 
 ## 📦 Download
 
+## 📥 Official Zimbra OSE Downloads
+
+In addition to this community build, you can also use the official Zimbra Open Source Edition installers.
+
+**Zimbra 9.0.0 Official Downloads**
+
+- **Ubuntu 22.04 (U22 / x64)**  
+  https://github.com/martbrooks/zimbra_direct_downloads/raw/main/9.0.0/UBUNTU22_64/
+
+- **Debian 11 (DEB / x64)**  
+  https://github.com/martbrooks/zimbra_direct_downloads/raw/main/9.0.0/DEBIAN11_64/
+
+- **EL8 (RHEL/CentOS/Alma/Rocky 8)**  
+  https://github.com/martbrooks/zimbra_direct_downloads/raw/main/9.0.0/RHEL8_64/
+
+- **EL7 (RHEL/CentOS/Alma/Rocky 7)**  
+  https://github.com/martbrooks/zimbra_direct_downloads/raw/main/9.0.0/RHEL7_64/
+
+> Browse the above directories to find `.tgz`, `.deb`, `.zip` bundles listed by platform.
+
+
+
 👉 **Latest Release:**  
 https://github.com/alierenerdal/zcs-kepler-u22-build/releases/latest
 
@@ -18,7 +40,7 @@ https://github.com/alierenerdal/zcs-kepler-u22-build/releases/latest
 
 ## 🧱 System Architecture
 
-![Architecture Diagram](docs/architecture.png)
+![Architecture Diagram](docs/architecture.svg)
 
 ZCS multi-layer architecture:
 
@@ -37,6 +59,17 @@ Supports:
 - Horizontal scaling
 
 ---
+
+## Install Screenshots
+
+![Terminal Install](screenshots/install-terminal.svg)
+![Wizard Setup](screenshots/install-wizard.svg)
+
+## System Architecture
+
+![Architecture](screenshots/architecture.svg)
+
+
 
 ## 🖥 Install Guide
 
