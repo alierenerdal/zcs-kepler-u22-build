@@ -1,0 +1,53 @@
+name: Deploy Docs (GitHub Pages)
+
+on:
+  push:
+    branches: [ "main", "erdalroot" ]
+    paths:
+      - "docs/**"
+      - "README.md"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build docs (simple)
+        run: |
+          mkdir -p _site
+          if [ -d docs ]; then
+            cp -r docs/* _site/ || true
+          fi
+          # Fallback: show README if no docs exist
+          if [ ! -f _site/index.html ]; then
+            echo "<pre>" > _site/index.html
+            sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g' README.md >> _site/index.html
+            echo "</pre>" >> _site/index.html
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
