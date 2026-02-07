@@ -40,7 +40,6 @@ https://github.com/alierenerdal/zcs-kepler-u22-build/releases/latest
 
 ## 🧱 System Architecture
 
-![Architecture Diagram](docs/architecture.svg)
 
 ZCS multi-layer architecture:
 
@@ -81,9 +80,7 @@ cd zcs-9.0.0*
 
 Follow interactive installer.
 
-Screenshots:
 
-![Install Step](screenshots/install/step1.png)
 
 ---
 
