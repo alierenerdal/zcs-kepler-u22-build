@@ -1,0 +1,15 @@
+<svg width="900" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="500" fill="#f6f8fa"></rect>
+
+  <rect x="120" y="180" width="200" height="100" fill="#58a6ff"></rect>
+  <text x="150" y="235" fill="white" font-size="18">User Clients</text>
+
+  <rect x="380" y="180" width="200" height="100" fill="#2da44e"></rect>
+  <text x="415" y="235" fill="white" font-size="18">ZCS Server</text>
+
+  <rect x="640" y="180" width="200" height="100" fill="#f85149"></rect>
+  <text x="675" y="235" fill="white" font-size="18">LDAP / DB</text>
+
+  <line x1="320" y1="230" x2="380" y2="230" stroke="#24292f" stroke-width="3"></line>
+  <line x1="580" y1="230" x2="640" y2="230" stroke="#24292f" stroke-width="3"></line>
+</svg>

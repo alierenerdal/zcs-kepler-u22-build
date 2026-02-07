@@ -1,0 +1,26 @@
+<svg width="900" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="500" fill="#ffffff"></rect>
+  <rect x="0" y="0" width="900" height="60" fill="#24292f"></rect>
+  <text x="20" y="38" fill="white" font-size="22" font-family="Arial">
+    ZCS Installer Wizard
+  </text>
+
+  <text x="60" y="120" fill="#24292f" font-size="18">
+    Server Configuration
+  </text>
+
+  <rect x="60" y="150" width="780" height="40" fill="#f6f8fa" stroke="#d0d7de"></rect>
+  <text x="80" y="175" fill="#24292f" font-size="16">
+    Hostname: mail.example.com
+  </text>
+
+  <rect x="60" y="210" width="780" height="40" fill="#f6f8fa" stroke="#d0d7de"></rect>
+  <text x="80" y="235" fill="#24292f" font-size="16">
+    Admin Email: admin@example.com
+  </text>
+
+  <rect x="60" y="300" width="120" height="40" fill="#2da44e"></rect>
+  <text x="85" y="327" fill="white" font-size="16">
+    Install
+  </text>
+</svg>

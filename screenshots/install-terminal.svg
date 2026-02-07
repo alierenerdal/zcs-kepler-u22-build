@@ -1,0 +1,24 @@
+<svg width="900" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="500" fill="#0d1117"></rect>
+  <text x="20" y="40" fill="#58a6ff" font-family="monospace" font-size="20">
+    Zimbra Collaboration Suite Installer
+  </text>
+  <text x="20" y="90" fill="#c9d1d9" font-family="monospace" font-size="16">
+    Checking system architecture...
+  </text>
+  <text x="20" y="120" fill="#3fb950" font-family="monospace" font-size="16">
+    ✔ Ubuntu 22 detected
+  </text>
+  <text x="20" y="150" fill="#3fb950" font-family="monospace" font-size="16">
+    ✔ Dependencies OK
+  </text>
+  <text x="20" y="180" fill="#3fb950" font-family="monospace" font-size="16">
+    ✔ Packages verified
+  </text>
+  <text x="20" y="230" fill="#f2cc60" font-family="monospace" font-size="16">
+    Installing ZCS 9.0.0 KEPLER...
+  </text>
+  <text x="20" y="270" fill="#3fb950" font-family="monospace" font-size="16">
+    Installation completed successfully
+  </text>
+</svg>
