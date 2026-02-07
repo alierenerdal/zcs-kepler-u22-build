@@ -1,53 +1,212 @@
-# Zimbra ZCS 9.0.0 KEPLER — Ubuntu 22.04 Build
+# Zimbra ZCS 9.0.0 — Ubuntu 22 Installer Bundle
 
-Custom-built Zimbra Collaboration Suite 9.0.0 installer bundle for Ubuntu 22.04 x64.
-
-This repository provides a reproducible build of Zimbra Open Source Edition generated from official upstream sources.
-
----
-
-## 📦 Build Information
-
-| Field | Value |
-|------|------|
-| Version | 9.0.0 GA |
-| Release Codename | KEPLER |
-| OS Target | Ubuntu 22.04 x64 |
-| Build Type | FOSS |
-| Architecture | amd64 |
-| Build Timestamp | 2026-02-07 |
-| Packaging | Debian (.deb bundle inside installer) |
+![release](https://img.shields.io/badge/release-9.0.0-blue)
+![platform](https://img.shields.io/badge/platform-Ubuntu%2022-orange)
+![package](https://img.shields.io/badge/package-deb-green)
+![license](https://img.shields.io/badge/license-FOSS-lightgrey)
+![downloads](https://img.shields.io/github/downloads/REPO_OWNER/REPO_NAME/total)
 
 ---
 
-## 📁 Included File
+## 📦 Overview
 
-zcs-9.0.0_GA_1013.UBUNTU22_64.20260207114844.tgz
+This repository contains a **self-built Zimbra Collaboration Suite 9.0.0 installer bundle**
+targeting:
 
+> **Ubuntu 22.04 LTS (Debian package format)**
 
-This archive contains the full Zimbra installer bundle including all required packages.
+The archive includes all required `.deb` packages and installer scripts.
+
+This repo is provided **as-is** for reproducible builds and educational use.
 
 ---
 
-## 🚀 Installation
+## 🧱 System Architecture
+
+```
++---------------------------+
+|        Internet           |
++------------+--------------+
+             |
+             v
++---------------------------+
+|        NGINX Proxy        |
++------------+--------------+
+             |
+             v
++---------------------------+
+|       Zimbra Core         |
+|  Mailbox + LDAP + MTA     |
++------------+--------------+
+             |
+             v
++---------------------------+
+|      Storage Backend      |
+|     Local / NFS / SAN     |
++---------------------------+
+```
+
+---
+
+## 🖥 Multi-Server Topology
+
+```
+LDAP Server
+    |
+Mailbox Server ---- Proxy Server ---- Internet
+    |
+MTA Server
+```
+
+Supports scalable enterprise deployment.
+
+---
+
+## 🚀 Installation Guide
+
+### Step 1 — Extract
 
 ```bash
-tar -xzf zcs-9.0.0_GA_1013.UBUNTU22_64.20260207114844.tgz
-cd zcs-9.0.0_GA_1013.UBUNTU22_64.20260207114844
-./install.sh
+tar -xzf zcs-9.0.0_GA_XXXX.UBUNTU22_64.tgz
+cd zcs-9.0.0*
+```
 
-🔧 System Requirements
+### Step 2 — Run installer
 
-Ubuntu 22.04 (Debian package format)
+```bash
+sudo ./install.sh
+```
 
-Minimum 4 GB RAM (8 GB+ recommended)
+Follow interactive prompts.
 
-2 CPU cores
+---
 
-20 GB free disk space
+## 📸 Install Screenshots
 
-Static IP + proper DNS setup
+> Replace these with real screenshots
 
-FQDN hostname
+```
+docs/screenshots/install-1.png
+docs/screenshots/install-2.png
+docs/screenshots/setup-complete.png
+```
 
+---
 
+## 🔄 Upgrade Guide
+
+### From previous Zimbra version
+
+1. Backup mailbox
+2. Stop services:
+
+```bash
+zmcontrol stop
+```
+
+3. Run installer
+4. Start services:
+
+```bash
+zmcontrol start
+```
+
+---
+
+## 🐳 Docker Install Guide
+
+> Experimental
+
+```bash
+docker run -it \
+  -p 25:25 -p 80:80 -p 443:443 \
+  zimbra/zcs:9.0.0
+```
+
+Production deployment should use VM or bare metal.
+
+---
+
+## 🛠 Troubleshooting
+
+### Installer fails
+
+```
+/tmp/install.log
+/var/log/zimbra.log
+```
+
+### Service not starting
+
+```bash
+zmcontrol status
+```
+
+### Rebuild configs
+
+```bash
+zmsetup.pl
+```
+
+---
+
+## ❓ FAQ
+
+**Q: Is this official?**
+A: No. Community build.
+
+**Q: Supported OS?**
+A: Ubuntu 22.04 only.
+
+**Q: Production safe?**
+A: Test before deploying.
+
+---
+
+## 📊 Download Counter
+
+GitHub releases automatically track download stats.
+
+---
+
+## ⚙ GitHub Actions Build Pipeline
+
+`.github/workflows/build.yml`
+
+```yaml
+name: ZCS Build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: |
+          echo "Trigger external build system"
+```
+
+---
+
+## 📜 License
+
+Zimbra FOSS license applies.
+
+---
+
+## ❤️ Credits
+
+Built using Zimbra Open Source build tools.
+
+---
+
+## ⚠ Disclaimer
+
+Use at your own risk.
+Not affiliated with Synacor or Zimbra Inc.
+
+---
