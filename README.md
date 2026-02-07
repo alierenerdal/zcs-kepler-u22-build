@@ -162,4 +162,4 @@ See upstream licensing.
 ## ❤️ Maintainer
 
 Ali Eren Erdal  
-https://seonedir.co
+https://www.seonedir.co
